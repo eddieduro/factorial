@@ -10,9 +10,11 @@ function factorial(value) {
 
   $('form#factorial').submit(function(event) {
     var value = parseInt($("input#number").val());
+    var sum = (value * factorial(value - 1));
     event.preventDefault();
 
-    console.log(value * factorial(value - 1));
-
+    if(sum > 0) {
+      alert('Your sum is ' + sum);
+    }
   });
 });
